@@ -1,0 +1,56 @@
+﻿@model wt_lab4_4mvc_strelchonok.Models.Book
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow rounded-4 border-0">
+                <div class="card-header bg-primary text-white rounded-top-4">
+                    <h2 class="mb-0">📖 @Model.Title</h2>
+                </div>
+                <div class="card-body p-4">
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4 text-muted">ID</dt>
+                        <dd class="col-sm-8">@Model.Id</dd>
+
+                        <dt class="col-sm-4 text-muted">Автор</dt>
+                        <dd class="col-sm-8">@Model.Author</dd>
+
+                        <dt class="col-sm-4 text-muted">Жанр</dt>
+                        <dd class="col-sm-8">@Model.Genre</dd>
+
+                        <dt class="col-sm-4 text-muted">Год издания</dt>
+                        <dd class="col-sm-8">@Model.Year</dd>
+
+                        <dt class="col-sm-4 text-muted">Количество страниц</dt>
+                        <dd class="col-sm-8">@Model.Pages</dd>
+
+                        <dt class="col-sm-4 text-muted">В наличии</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.IsAvailable)
+                            {
+                                <span class="badge bg-success">Да</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Нет</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer bg-light d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        ← Назад к списку
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@Model.Id"
+                       class="btn btn-warning">
+                        ✏ Редактировать
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

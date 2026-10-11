@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow rounded-4 border-0">
+                <div class="card-body text-center p-5">
+                    <h1 class="display-4 fw-bold text-primary mb-3">
+                        📚 Библиотека
+                    </h1>
+                    <p class="lead text-muted mb-4">
+                        Веб-приложение для управления каталогом книг.
+                        Просмотр, добавление, редактирование и удаление книг —
+                        всё в одном месте.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a asp-controller="Book" asp-action="Index"
+                           class="btn btn-primary btn-lg shadow-sm">
+                            Перейти к каталогу
+                        </a>
+                        <a asp-controller="Book" asp-action="Create"
+                           class="btn btn-outline-secondary btn-lg">
+                            Добавить книгу
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm rounded-4 text-center p-3">
+                        <div class="fs-1">📖</div>
+                        <h5 class="mt-2">Каталог</h5>
+                        <p class="text-muted small mb-0">
+                            Просмотр всех книг библиотеки
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm rounded-4 text-center p-3">
+                        <div class="fs-1">➕</div>
+                        <h5 class="mt-2">Добавление</h5>
+                        <p class="text-muted small mb-0">
+                            Добавьте новую книгу в фонд
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm rounded-4 text-center p-3">
+                        <div class="fs-1">🔍</div>
+                        <h5 class="mt-2">Детали</h5>
+                        <p class="text-muted small mb-0">
+                            Подробная информация о книге
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
